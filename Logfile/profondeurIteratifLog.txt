@@ -1,0 +1,28 @@
+niveau 0: 
+ path: S
+ chemin: S
+niveau 1 : 
+ path: ['S', 'A', 'B']
+ chemin: ['S', 'A', 'B']
+ cout: 0
+temps exec:0.0020020008087158203
+niveau 2 : 
+ path: ['S', 'A', 'B', 'B']
+ chemin: ['S', 'A', 'B', 'B']
+ cout: 0
+temps exec:0.0020020008087158203
+niveau 3 : 
+ path: ['S', 'A', 'B', 'D', 'C', 'B']
+ chemin: ['S', 'A', 'B', 'D', 'C', 'B']
+ cout: 0
+temps exec:0.0020020008087158203
+niveau 4 : 
+ path: ['S', 'A', 'B', 'D', 'C', 'B']
+ chemin: ['S', 'A', 'B', 'D', 'C', 'B']
+ cout: 0
+temps exec:0.0020020008087158203
+niveau 5 : 
+ path: ['S', 'A', 'B', 'D', 'C', 'G1', 'G2']
+ chemin: ['S', 'A', 'B', 'C', 'G2']
+ cout: 22
+temps exec:0.0020020008087158203

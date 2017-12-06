@@ -1,0 +1,201 @@
+#:import Factory kivy.factory.Factory
+<MyModal@ModalView>:
+    auto_dismiss: False
+    size_hint:.50,.70
+    GridLayout:
+        rows:2
+        cols:1
+        padding:10
+        FileChooserIconView:
+            id:fileView
+            size_hint_x:.70
+            path:"./"
+            multiselect:False
+            on_selection: app.loader(fileView.selection), root.dismiss()
+
+
+<CustButton@Button>:
+    font_size:16
+    color: 0,0,0, 1
+    size:160, 30
+    background_normal: ''
+    background_color: .80,.0,.50, 1
+
+<CustomDropDown>:
+    Label:
+        font_size:16
+        text: 'Non Informes'
+        size_hint_y: None
+        height: 30
+    Button:
+        font_size:16
+        size:160, 30
+        text: 'Largeur'
+        size_hint_y: None
+        height: 30
+        color:.54,.47,.6,1
+        background_color: .83,.80,.86, 1
+        background_normal: ''
+        on_release: root.select('Largeur')
+    Button:
+        font_size:16
+        size:160, 30
+        text: 'Profondeur'
+        size_hint_y: None
+        height: 30
+        color:.54,.47,.6,1
+        background_color: .83,.80,.86, 1
+        background_normal: ''
+        on_release: root.select('Profondeur')
+    Button:
+        font_size:16
+        size:160, 30
+        text: 'Cout uniforme'
+        size_hint_y: None
+        height: 30
+        color:.54,.47,.6,1
+        background_normal: ''
+        background_color: .83,.80,.86, 1
+        on_release:root.select('Cout uniforme')
+    Button:
+        font_size:16
+        size:160, 30
+        text: 'IDS'
+        size_hint_y: None
+        height: 30
+        color:.54,.47,.6,1
+        background_color: .83,.80,.86, 1
+        background_normal: ''
+        on_release: root.select('IDS')
+    Label:
+        font_size:16
+        text: 'Informes'
+        size_hint_y: None
+        height: 30
+        background_color: .0,.0,.50, 1
+    Button:
+        font_size:16
+        size:160, 30
+        text: 'A*'
+        size_hint_y: None
+        height: 30
+        background_color: .83,.80,.86, 1
+        background_normal: ''
+        color:.54,.47,.6,1
+        on_release: root.select('A*')
+    Button:
+        font_size:16
+        size:160, 30
+        text: 'BFS'
+        size_hint_y: None
+        height: 30
+        color:.54,.47,.6,1
+        background_normal: ''
+        background_color: .83,.80,.86, 1
+        on_release: root.select('BFS')
+
+<GridLayoutBuild>:
+    id: gridbuild
+    rows:1
+    cols :2
+    spacing :10
+    padding:10
+    canvas:
+        Color:
+            rgb: [.54,.47,.6]
+        Rectangle:
+            pos: self.pos
+            size: self.width, self.height
+    GridLayout:
+        rows:7
+        cols :2
+        spacing :20
+        padding:20
+
+        Widget:
+            Button:
+                text:"Fichier.."
+                font_size:16
+                size:160, 30
+                pos:130,550
+                background_color: .75,.70,.8, 1
+                on_press:root.onButtonPress(self), Factory.MyModal().open()
+            Label:
+                text:"Choisir Fichier"
+                pos:0,515
+                font_size:16
+            Button:
+                id:algo
+                text:"Choisir .."
+                pos:130,500
+                font_size:16
+                size:160, 30
+                background_color: .75,.70,.8, 1
+                on_release:root.oncustomdropdown(self)
+            Label:
+                text:"Algorithmes"
+                pos:0,465
+                font_size:16
+            TextInput:
+                id:EI
+                pos:50,200
+                size:120, 30
+            Label:
+                text:"Etat initial"
+                pos:50,195
+                font_size:16
+            TextInput:
+                id:EF
+                pos:180,200
+                size:120, 30
+            Label:
+                text:"Etat final"
+                pos:180,195
+                font_size:16
+            Button:
+                text:"Executer"
+                pos:100,160
+                font_size:16
+                size:160, 30
+                background_color: .75,.70,.8, 1
+                on_press:app.getData(algo,EI,EF)
+            Button:
+                text:"Parcours"
+                pos:10,100
+                font_size:16
+                size:160, 30
+                background_color: .75,.70,.8, 1
+                on_press: app.aniamationset(app.list)
+            Button:
+                text:"Chemin"
+                pos:200,100
+                font_size:16
+                size:160, 30
+                background_color: .75,.70,.8, 1
+                on_press: app.aniamationset(app.listchemin)
+            Label:
+                text:app.l.text
+                font_size:30
+                markup: True
+                pos: 100,0
+
+    BoxLayout:
+        orientation: "vertical"
+        spacing :10
+        padding:10
+        canvas:
+            Rectangle:
+                pos: self.pos
+                size: self.width, self.height
+                source:app.image.source
+
+
+
+
+<BtnBrowser>:
+    rows:1
+    cols :2
+    spacing :10
+    padding:10
+    ModalView:
+

@@ -1,0 +1,11 @@
+digraph {
+	node [shape=ellipse]
+	S [color=blue xlabel=<<font color='blue'>21</font>>]
+	A [color=blue xlabel=<<font color='blue'>18</font>>]
+	B [color=blue xlabel=<<font color='blue'>15</font>>]
+	C [color=blue xlabel=<<font color='blue'>5</font>>]
+	S -> A [label=4]
+	S -> B [label=10]
+	A -> B [label=3]
+	B -> C [label=10]
+}

@@ -1,0 +1,10 @@
+noeuds:
+S=21
+A=18
+B=15
+C=5
+arcs:
+S,A=4
+S,B=10
+A,B=3
+B,C=10

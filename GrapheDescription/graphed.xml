@@ -1,0 +1,17 @@
+<graphe>
+    <noeud>S=21</noeud>
+    <noeud>A=18</noeud>
+    <noeud>B=15</noeud>
+    <noeud>D=4</noeud>
+    <noeud>C=5</noeud>
+    <noeud>G1=0</noeud>
+    <noeud>G2=0</noeud>
+    <arc>S,A=4</arc>
+    <arc>S,B=10</arc>
+    <arc>A,B=3</arc>
+    <arc>B,D=6</arc>
+    <arc>D,D=10</arc>
+    <arc>B,C=10</arc>
+    <arc>C,G1=6</arc>
+    <arc>C,G2=5</arc>
+</graphe>

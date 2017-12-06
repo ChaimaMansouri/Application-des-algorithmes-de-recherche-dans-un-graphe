@@ -1,0 +1,4 @@
+parcours: ['S', 'A', 'B', 'B', 'D', 'C', 'D', 'G1']
+chemin: ['S', 'B', 'C', 'G1']
+cout: 26
+temps d'exec :0.0010044574737548828
